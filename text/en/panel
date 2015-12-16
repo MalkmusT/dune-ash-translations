@@ -1,0 +1,118 @@
+\input{panelmacros}
+
+\def{equation}{
+  \absolute{0.25}{#1}{
+    \parbox{6.5}{
+      \color{text.default}
+      \hfill The governing equation is given by \hfill \\
+      \par
+      \hfill \image{5}{0}{../../images/#0.png} \hfill \\
+    }
+  }
+}
+
+%[main]
+\page{
+  \font{DejaVuSerif}{28}
+
+  This application computes an approximate solution to the dispersion
+  of \link{volcano}{volcano ash} \link{volcano}{over Europe}
+  \link{volcano}{after an} \link{volcano}{eruption.} Input data are set
+  interactively and results are computed instantaneously.
+
+  \par
+
+  \link{numerics}{Numerical simulations} are used in geophysical
+  applications like weather forecast or in predicting the propagation
+  of pollutants in the atmosphere. \link{equation}{Mathematical models}
+  that describe these phenomena are usually expressed in terms of Partial
+  Differential Equations (PDEs). Computing solutions to systems of PDEs
+  is a challenging task.
+}
+\hint{link:manual}{Learn how to use this program}{7.66}
+
+%[volcano]
+\page{
+  \item{
+    Choose a volcano position.\\
+    \hfill \\ 
+    \it \leading{0.0} Touch the screen at the desired volcano position. 
+  }
+  \color{dune.gray}
+  \item{ Sketch a wind field.}
+  \item{ Choose a diffusion coefficient \glue{\math{\eps}.}}
+  \item{ Explore the simulation results.}
+}
+\equation{equation_volcano}{4}
+\hint{link:volcano}{Learn more about volcanoes}{7.66}
+
+%[input]
+\page{
+  \color{dune.gray}
+  \item{ Choose a volcano position. }
+
+  \color{black}
+  \item{ Sketch a wind field. \\
+    \hfill \\ \it \leading{0.0}
+    The faster you draw the faster the wind will be.
+  }
+
+  \color{dune.gray}
+  \item{ Choose a diffusion coefficient \glue{\math{\eps}.}}
+  \item{ Explore the simulation results.}
+}
+\equation{equation_windfield}{4}
+\hint{link:equation}{Learn more about the mathematical model}{7.66}
+
+%[diffusion]
+\page{
+  \color{dune.gray}
+  \item{ Choose a volcano position.}
+  \item{ Sketch a wind field. }
+
+  \color{black}
+  \item{ Choose a diffusion coefficient \glue{\math{\eps}.}\\
+    \hfill \\ \it \leading{0.0}
+    The higher you choose the constant the faster the ash will disperse.
+  }
+
+  \color{dune.gray}
+  \item{ Explore the simulation results.}
+}
+\equation{equation_diffusion}{4}  
+\hint{link:equation}{Learn more about the mathematical model}{6.66}
+
+%[visual]
+\page{
+  \color{dune.gray}
+  \item{ Choose a volcano position. }
+  \item{ Sketch a wind field. }
+  \item{ Choose a diffusion coefficient \glue{\math{\eps}.}}
+
+  \color{black}
+  \item{ Explore the simulation results.\\
+    \hfill \\ \it \leading{0.0}
+    The result is computed and visualized on the map.
+  }  
+}
+\equation{equation}{4}
+\hint{link:numerics}{Learn more about the discretization}{7.0}
+
+%[computing]
+\font{DejaVuSerif}{42}
+\hfill computing wind field...\hfill\\
+
+%[coefficient]
+\font{DejaVuSerif}{32}
+\hfill\\\hfill diffusion coefficient:\hfill\\
+
+%[low]
+low \hfill
+
+%[high]
+\hfill high
+
+%[language]
+\font{DejaVuSerif}{42}
+\hfill choose a language\hfill\\
+

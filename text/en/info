@@ -1,0 +1,348 @@
+\input{macros}
+
+%[maininfo]
+\page{Overview}{
+  This program is a \emph{numerical simulation} of the propagation of an ash cloud
+  caused by a volcano eruption at a constant height in a given wind field.
+  This project was motivated by the eruptions of the Icelandic volcanoes
+  \link{volcano2010}{Eyjafjallajökull} in 2010 and
+  \link{volcano2011}{Grímsvötn} in 2011.\par
+
+  In this program you can interactively simulate such an event in central Europe.
+  The program will lead you step-by-step through the setup of the simulation and
+  visualize the results.\par
+
+  You can choose the volcano's position, specify the wind and set the diffusion
+  rate of the ash. Once results are computed, they are played back on the map. 
+  Additionally, the wind and the underlying mesh can be displayed on the map for several
+  degrees of fineness. \par
+
+  \par\link{manual}{Learn how to use this program}
+  \par\link{volcano}{Learn more about volcanoes}
+  \par\link{equation}{Learn more about the mathematical model for the ash transport}
+  \par\link{numerics}{Learn more about the numerics used in this simulation}
+  
+  \cite{\link{impressum}{ Credits }}
+} 
+
+
+%[manual]
+\page{User Manual}{
+  This program is split into four easy steps:\par
+
+  \stepitem{1}{10}{Step}{
+    Choose a volcano position\\
+    Place the volcano by clicking/touching the map on the desired position.
+  }
+  \stepitem{1}{10}{Step}{
+    Sketch a wind field\\
+    Draw lines on the map to give general directions and speed of the wind.
+  }
+  \stepitem{1}{10}{Step}{
+    Choose a diffusion coefficient\\
+    The higher the diffusion coefficient is, the faster the ash will dissipate.
+  }
+  \stepitem{1}{10}{Step}{
+    \link{visualizationmode}{Explore the simulation results}\\
+    Watch the animated numerical solution while it is computed in the background.
+  }
+
+  \par\subsection{General Buttons:}
+  \parbox{3.5}{
+    \imgitem{arrow_leftmost.wbtn.png}{2.5}{start over}
+  }
+  \hfill
+  \parbox{3.5}{
+    \imgitem{arrow_left.wbtn.png}{2.5}{previous step\\(if possible)}
+  }
+  \hfill
+  \parbox{3.5}{
+    \imgitem{arrow_right.wbtn.png}{2.5}{next step\\(if possible)}
+  }
+}
+
+
+%[volcanomode]
+\page{Step 1: Choose a Volcano Position}{
+  Place the volcano by clicking/touching the map on the desired position. \\
+  A link to a \link{volcano}{list of volcanoes} in Europe is also provided. \par
+
+  Next is the \link{inputmode}{input mode} where you can draw the wind field.\\
+}
+
+
+%[inputmode]
+\page{Step 2: Sketch a Wind Field}{
+  In this mode you can set the wind conditions.
+  Draw lines on the map to give general directions and speed of the wind. 
+  The more arrows are on a line, the faster the resulting wind is.\\
+  Everything is possible, even vortices... \par
+  From the sketch a wind field over the whole map is computed. This process may take some time. \par 
+
+  Next is the \link{diffusionmode}{diffusion mode} where you can choose how fast the ash will spread. \par
+
+  \subsection{Buttons}
+  \defitem{'undo' button}{delete the drawn wind paths.\\}
+}
+
+
+%[diffusionmode]
+\page{Step 3: Choose a Diffusion Coefficient \math{\eps}}{
+  In this mode you can choose the diffusion coefficient.
+  Due to micro turbulences the ash spreads out even when it is calm. Within the \link{equation}{mathematical model}
+  this spreading is represented via the diffusion term. The higher the diffusion coefficient is, the faster the ash will dissipate. \par
+
+  Next is the \link{visualizationmode}{visualization mode} where the simulation of the ash cloud spreading in the drawn wind field over Europe is shown. \par
+
+  \subsection{Buttons:} 
+  \defitem{'arrow' button}{toggle through the visualization levels of the wind field}
+  \defitem{'grid' button}{toggle through the computational grid levels, see also: \link{numerics}{numerics}}
+  \defitem{coefficient slider}{move to set coefficient value} 
+}
+
+
+%[visualizationmode]
+\page{Step 4: Explore the Simulation Results}{
+  The numerical solution is computed in the background.
+  You can use the 'stop' and 'play/pause' buttons, or the slider to navigate through the simulation.\par
+
+  Note that it takes some time to fully load/compute all results.
+  Also in case of large numbers for the diffusion coefficient the computation may take a long time.
+
+  \par\subsection{Buttons:}
+  \parbox{5.5}{
+    \imgitem{arrows.wbtn.png}{4.5}{switch through the detail levels of the wind field}
+    \imgitem{grid.wbtn.png}{4.5}{switch through the computational grid levels, see also: \link{numerics}{Discretization}}
+  }
+  \hfill
+  \parbox{5.5}{
+    \imgitem{play.wbtn.png}{4.5}{play simulation results (pause during playback)}
+    \imgitem{stop.wbtn.png}{4.5}{stop playback and set visualization frame to zero}
+    \imgitem{repeat.wbtn.png}{4.5}{play simulation results in infinite loop}
+  }
+
+  \par\subsection{Slider:}
+  The time slider allows you to choose the current visualization frame.
+}
+
+
+%[volcano]
+\page{Volcanic Activity}{
+\font{DejaVuSerif}{24}
+
+A volcano is an opening, or rupture, in a planet's surface or crust, which allows hot magma, 
+volcanic ash and gases to escape from the magma chamber below the surface.
+Volcanoes are generally found where tectonic plates are diverging or converging.\par
+
+The Mid-Atlantic Ridge, has examples of volcanoes caused 
+by divergent tectonic plates pulling apart
+the \nobreak{Pacific Ring of Fire} has examples of volcanoes caused by convergent tectonic plates coming together.
+By contrast, volcanoes are usually not created where two tectonic plates slide past one another. 
+Volcanoes can also form where there 
+is stretching and thinning of the Earth's crust in the interiors of plates, e.g., 
+in the East African Rift and the Rio Grande Rift in North America. \par
+
+Volcanic activity away 
+from plate boundaries has also been explained as mantle plumes. These so-called "hotspots", for example Hawaii, 
+are postulated to arise from upwelling diapirs with magma from the core–mantle boundary, 3,000 km deep in the Earth.
+\par
+Erupting volcanoes can pose many hazards, not only in the immediate vicinity of the eruption. Volcanic ash can be a 
+threat to aircraft, in particular those with jet engines where ash particles can be melted by 
+the high operating temperature. Large eruptions can affect temperature as ash and droplets of 
+sulfuric acid obscure the sun and cool the Earth's lower atmosphere or troposphere. however, they 
+also absorb heat radiated up from the Earth, thereby warming the stratosphere. Historically, 
+so-called volcanic winters have caused catastrophic famines. \par
+
+A list of volcanoes in Europe is \link{volcanolist}{here.} \par
+
+\cite{Content partly taken from Wikipedia.org}
+}
+
+
+%[volcanolist]
+\page{Volcanos in Europe}{
+\vskip{1.2}
+The most famous volcanos in Europe are: \\
+\item{ Etna (between 3370-3400 m), Sicily, Italy }
+\item{ Beerenberg (2277 m), Jan Mayen, Norway }
+\item{ \link{volcano2011}{Grímsvötn} (1725 m, under the Vatnajökull), Iceland }
+\item{ \link{volcano2010}{Eyjafjallajökull} (1666 m), Iceland }
+\item{ Herðubreið (1682 m), Iceland }
+\item{ Hekla (1491 m), Iceland }
+\item{ Vesuv (about 1200 m), Italy }
+\item{ Cabeço Gordo (1043 m), Azoren, Portugal }
+\item{ Stromboli (about 926 m), Italy }
+\item{ Santorin (Σαντορίνη) (575 m), Greece }
+
+\cite{Content partly taken from Wikipedia.org}
+}
+
+
+%[volcano2010]
+\page{Eyjafjallajökull}{
+  The volcano Eyjafjallajökull is located under the glacier of the same name in southern Iceland.\par
+
+  The first phase of the 2010 eruption began on 20 March and had only local impact. On 14 April 
+  a second, explosive phase began and volcanic ash was thrown several kilometers into the air.
+  In May the volcanic activity began subside and was declared over in October 2010.\par
+
+  The eruption injected an ash plume into the jet stream and the ash was subsequently transported
+  over northern Europe.
+  Due to the lack of guidelines for the tolerable ash concentration in the air,
+  the airspace over large parts of Europe was closed from April 15 to April 21,
+  by which time around 95,000 flights had been canceled.
+  Again on 4 and 5 May the airspace over Ireland, North Ireland and Scotland was closed,
+  on 9 May over Spain, Portugal, Austria and parts of Italy and Germany and on 16 May again
+  over Ireland and the UK.\par
+
+  As a reaction to the flight cancellations, new security guidelines
+  concerning the tolerable ash concentration were adopted.
+  The estimated financial loss for the airlines was about €1.3 billion.
+  Other industries were affected as well because of transportation and supply difficulties.
+
+  \cite{Content partly taken from Wikipedia.org}
+}
+
+
+%[volcano2011]
+\page{Grímsvötn}{
+  The volcano Grímsvötn is located under the glacier Vatnajökull in the highlands of Iceland.\par
+  
+  On 21 May 2011 the volcano began to erupt and on the evening of the day the
+  ice cover of the glacier broke. 
+  The eruption plume quickly rose to a height of 20 km but subsequently fell to
+  an average height of 10 km.
+  On 24 May the eruption was weakening and stopped finally on 25 May.\par
+
+  During the period from 22 to 25 May the ash cloud hindered air travel in several European
+  countries and a total of 900 flights had to be canceled. On 22 May Iceland closed down its main 
+  airport and by 23 May parts of the danish airspace were closed. On 24 May airports in Scotland,
+  North Ireland and northern England were closed and on 25 May some airports in northern Germany
+  were closed till the afternoon.\par
+
+  While the aftermath of the eruption was smaller than the one from the eruption of the 
+  Eyjafjallajökull in the previous year the total volume of ash produced by the eruption was 
+  actually much higher. New guidelines for air travel adopted after the events from 
+  the previous year, less aggressive ash characteristics and more favorable wind conditions helped 
+  considerably to lessen the impact.\\
+
+  \cite{Content partly taken from Wikipedia.org}
+}
+
+
+%[equation]
+\page{Mathematical Model}{
+  A simple mathematical model for propagation of ash particles in the atmosphere
+  is the following partial differential equation:\\
+  \hfill\image{4}{0.5}{../../images/equation.png}\hfill\par
+
+  \hfill\parbox{11}{
+    \desc{Concentration \math{c(x,t)}}{
+      The unknown function \math{c(x,t)} describes the ash concentration in a
+      point x at time t.
+      The initial concentration is zero.
+    }
+    \desc{Wind Field \math{w(x)}}{
+      The vector field \math{w(x)} describes direction and speed of the wind in
+      a point x.
+    }
+    \desc{Diffusion Coefficient \math{\eps}}{
+      The constant \math{\eps} scales the amount of diffusion, i.e., the random
+      movement of ash particles.
+      It is used as an extremely simple model for microscopic movement in
+      turbulent flow.
+    }
+    \desc{Soure Term \math{v(x,t)}}{
+      The source term \math{v(x,t)} describes the injection of ash into the
+      atmosphere in a point x at time t.
+      It models the volcano eruption and is nonzero only in a small neighborhood
+      of the volcano position.
+    }
+  }\hfill\\
+}
+
+
+%[numerics]
+\page{Discretization}{
+
+  \input{discretization.en}
+  \link{numericsold}{Learn more}
+}
+
+
+%[numericsold]
+\page{Discretization}{
+  In this simulation a splitting between the space and time discretization is
+  applied, a technique known as the \emph{method of lines} in the literature.\par
+
+  \section{Space Discretization}
+  For the spacial discretization a \emph{Discontinuous Galerkin} (DG) method on
+  a structured grid is used.
+  This method is based on the decomposition of the domain (here the map of
+  Europe) into 'small' quadrilaterals.
+  On each quadrilateral, the solution is approximated by a bilinear function.
+  The DG scheme gives a rule how to compute these bilinear functions.\par
+
+  \section{Time Discretization}
+  The observed time interval (0h - 100h) is subdivided into a finite number of
+  time steps.
+  A \emph{Runge-Kutta method} is then used to evolve the approximate ash
+  concentration from one time step to the next.\par
+
+  \par
+  The software package \link{software}{\dunefem} is used to compute for the
+  numerical simulations.
+  \par 
+  \hfill\link{software}{\image{6}{0}{../../images/logo_dune-fem.png}}\hfill \\
+}
+
+
+%[software]
+\page{Dune-Fem}{
+  \font{DejaVuSerif}{30}
+  \dunefem is a discretization module for the \glue{\emph{D}istributed} and
+  \glue{\emph{U}nified} \glue{\emph{N}umerics} \glue{\emph{E}nvironment}
+  \glue{(\dune).}
+  It provides interface for discrete function spaces and functions as well as
+  linear, nonlinear, and inverse operators.
+  Special attention is paid to performance, adaptivity and parallelization.
+  \dunefem is developed at the universities of Freiburg, Münster, Stuttgart, and
+  Warwick.
+  \hfill\mbox{\font{DejaVuSansMono}{24}http://dune.mathematik.uni-freiburg.de/}\par
+
+  \par
+  The general \dune core provides slim interfaces for general concepts like
+  grids or solvers.
+  Modern C++ programming techniques are used to achieve little or no interface
+  overhead.
+  \dune is developed at universities in Aachen, Berlin, Freiburg, Heidelberg,
+  Münster, Stuttgart, and Warwick.
+  \hfill\mbox{\font{DejaVuSansMono}{24}http://www.dune-project.org/}\par
+
+  \par
+  The parallel Cartesian grid is provided by the \dunespgrid module developed
+  at the university of Freiburg.
+  \hfill\mbox{\font{DejaVuSansMono}{24}http://dune.mathematik.uni-freiburg.de/grids/dune-spgrid/}\par
+}
+
+
+%[impressum]
+\page{Credits}{
+\par\section{Organisation}\par
+Prof. Dr. D. Kröner, Dr. M. Nolte (AAM, University of Freiburg)\\
+T.Malkmus, Th. Strauch (University of Freiburg)\\
+\par
+\par\section{Programming}\par
+Dr. M. Nolte (AAM, University of Freiburg)\\
+Dr. R. Klöfkorn (IMAGe / NCAR)\\
+D. Nies, J. Gerstenberger, T. Malkmus und A. Pfeiffer (University of Freiburg)\\
+\par
+\par\section{Pictures}\par
+Map by San Jose, Wikimedia Commons (licensed under CC-BY-SA 3.0)\\
+Volcano picture by H. Thorburn, Wikimedia Commons (licensed under CC-BY 3.0)\\
+Icons by J. Gerstenberger and E. Thum (University of Freiburg)\\
+
+
+\absolute{lb}{0.25}{6.6}{\font{DejaVuSans}{22}\it CC-BY 3.0: Creative-Commons Attribution license version 3.0, http://www.creativecommons.org/licenses/by/3.0/ }
+\absolute{lb}{0.25}{6.8}{\font{DejaVuSans}{22}\it CC-BY-SA 3.0: Creative-Commons ShareAlike license version 3.0, http://www.creativecommons.org/licenses/by-sa/3.0/ }
+}

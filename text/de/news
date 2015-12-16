@@ -1,0 +1,17 @@
+
+\leading{0.2}
+\def{par}{\leading{0.5}\newline\leading{0.2}}
+
+\def{link}{\button{link:#0}{\color{text.link} #1}}
+
+\font{DejaVuSerif}{28}
+\image{9}{0}{../../images/main.png}\\
+\hfill \mbox{\font{DejaVuSerif}{20} \it Photography © Henrik Thorburn} \par \par
+\hfill\parbox{8}{ 
+  Im Jahr 2010 brach in Island der Vulkan Eyjafjallajökull aus.
+  Die im Laufe der Eruption entstandenen Aschewolken bedeckten große Teile Nordeuropas 
+  und führten in der Zeit vom 15. bis zum 20. April zur Schließung des Luftraums 
+  über mehreren europäischen Staaten.\hfill\link{volcano2010}{[weiterlesen]}
+}\hfill
+\absolute{rb}{8.75}{8.8}{\font{DejaVuSans}{24} \it \link{impressum}{Credits} }
+\absolute{lb}{0.2}{8.8}{\image{0.8}{0.8}{../../images/qr.png}}

@@ -1,0 +1,300 @@
+\input{macros}
+
+%[maininfo]
+\page{\font{dotum}{42} 개요}{
+\font{dotum}{34}
+  이 프로그램은 주어진 바람의 벡터장에 대해 화산재의 확산을 보여주는 \emph{수치시뮬레이션} 입니다.
+  이는 아이슬란드 화산폭발을 계기로 만들어 졌습니다.
+  \link{volcano2010}{\font{DejaVuSans}{32} Eyjafjallajökull} 2010 
+  년 그리고
+  \link{volcano2011}{\font{DejaVuSans}{32}Grímsvötn} 2011 년.\par
+
+  이 프로그램을 통해 여러분은 유럽의 중심에서 일어난 이러한 사건을 모의 실험해 볼 수 있습니다.
+  시뮬레이션의 과정들을 하나하나 알려주고 결과를 시각화해 줍니다. 
+  \par
+
+  화산의 위치와 구체적인 바람의 방향 그리고 확산계수를 선택할 수 있습니다. 결과값이 계산되자마자 지도에 바로 나타납니다.
+  또한 바람과 화산재 모두 여러분이 원하는 만큼 촘촘하게 만들 수 있습니다.
+  \par
+
+  \par\link{manual}{프로그램 사용법 배워보기 }
+  \par\link{volcano}{화산에 대해 더 배워보기}
+  \par\link{equation}{화산재 확산에 대한 수학적 모델에 대해 더 배워기 }
+  \par\link{numerics}{프로그램에 사용된 수치적 기법 배워보기}
+  
+  \cite{\link{impressum}{ 제작자 }}
+} 
+
+
+%[manual]
+\page{\font{dotum}{42} 사용설명서}{
+\font{dotum}{34}
+ 4개의 간단한 Step으로 이루어집니다:\par
+
+  \stepitem{1}{10}{Step}{
+    화산의 위치 선택하기\\
+    화면을 터치하여 원하는 위치에 화산을 올려놓으십시오.
+  }
+  \stepitem{1}{10}{Step}{
+    바람의 벡터장을 그리기\\
+    지도에 선을 그려 바람의 방향과 속도를 줍니다.
+  }
+  \stepitem{1}{10}{Step}{
+    확산계수 선택하기\\
+    확산계수가 클수록 화산재는 더 빨리 퍼집니다.
+  }
+  \stepitem{1}{10}{Step}{
+    \link{visualizationmode}{시뮬레이션 결과 관찰}\\
+    수치적 해가 계산됨과 동시에 화면에 나타납니다.
+  }
+
+  \par\subsection{ \font{dotum}{38} 버튼설명:}
+  \parbox{3.5}{
+    \imgitem{arrow_leftmost.wbtn.png}{2.5}{다시시작}
+  }
+  \hfill
+  \parbox{3.5}{
+    \imgitem{arrow_left.wbtn.png}{2.5}{이전 Step\\(가능하다면)}
+  }
+  \hfill
+  \parbox{3.5}{
+    \imgitem{arrow_right.wbtn.png}{2.5}{다음 Step\\(가능하다면)}
+  }
+}
+
+
+%[volcanomode]
+\page{Step 1: \font{dotum}{42} 화산의 위치 선택하기}{
+\font{dotum}{34}
+ 화면을 터치하여 원하는 위치에 화산을 올려놓으십시오. \\
+ 유럽에 있는 \link{volcano}{화산 목록}. \par
+
+  다음은 바람의 벡터장을 그릴 수 있는 \link{inputmode}{단계} 입니다. \\
+}
+
+
+%[inputmode]
+\page{Step 2: \font{dotum}{42} 바람의 벡터장 그리기}{
+\font{dotum}{34}
+  이 모드에서는 바람을 마음대로 조종할 수 있습니다.
+ 지도에 선을 그려 바람의 방향과 속도를 정합니다. 선에 화살표가 많을수록 바람은 더 세집니다.\\
+ 점을 비롯한 모든 것이 가능합니다. \par
+ 스케치된 바람을 토대로 지도 전체에서 벡터가 계산됩니다. 조금 시간이 걸릴 수도 있습니다. \par 
+
+  다음은 화산재가 얼마나 빨리 퍼지게 할지 설정할 수 있는 \link{diffusionmode}{확산계수 선택} 입니다. \par
+
+  \subsection{Buttons}
+  \defitem{'undo' button}{\font{dotum}{34} 그려진 바람을 지웁니다.\\}
+}
+
+
+%[diffusionmode]
+\page{Step 3:\font{dotum}{42} 확산계수 선택하기 \math{\eps}}{
+\font{dotum}{34}
+  이 모드에서는 확산계수를 선택할 수 있습니다. 미시적 터뷸런스로 인해 안정되었을 때도 화산재가 퍼집니다.  
+  \link{equation}{수학적 모델} 안에 있는 확산 항에 의해 설명이 됩니다. 확산계수가 클수록 화산재는 더 빨리 퍼집니다.
+  \par
+
+  다음은 화산재 확산 시뮬레이션의 결과를 보여주는 \link{visualizationmode}{시각화 단계} 입니다. \par
+
+  \subsection{Buttons:} 
+  \defitem{'arrow' button}{바람 벡터를 더 자세히 볼 수 있습니다. }
+  \defitem{'grid' button}{격자의 크기를 조절해보세요. 참고: \link{numerics}{수치해석}}
+  \defitem{coefficient slider}{움직여서 계수를 설정하세요 } 
+}
+
+
+%[visualizationmode]
+\page{Step 4: \font{dotum}{42} 시뮬레이션 결과 관찰하기}{
+\font{dotum}{34}
+  수치적 해는 프로그램 내에서 계산되어 집니다. 여러분은 '중지' 혹은 '재생/일시정지' 버튼을 이용하여 시뮬레이션 과정을 더 자세히 학습할 수 있습니다. \par
+
+  결과를 끝까지 계산하는 데에는 상당한 시간이 소요됩니다. 또한 확산계수가 클 경우 더 오랜 시간이 걸립니다.
+
+  \par\subsection{Buttons:}
+  \parbox{5.5}{
+    \imgitem{arrows.wbtn.png}{4.5}{ 바람 벡터를 더 자세히 볼 수 있습니다.}
+    \imgitem{grid.wbtn.png}{4.5}{ 격자의 크기를 조절해보세요. 참고: \link{numerics}{이산화(Disretization)}}
+  }
+  \hfill
+  \parbox{5.5}{
+    \imgitem{play.wbtn.png}{4.5}{시뮬레이션 결과를 실행해 보세요.(재생 중에 일시정지 할 수 있습니다)}
+    \imgitem{stop.wbtn.png}{4.5}{재생을 중지하고 시각화 틀을 0으로 만드세요. }
+    \imgitem{repeat.wbtn.png}{4.5}{무한루프의 결과를 재생해 보세요. }
+  }
+
+  \par\subsection{Slider:}
+  시간 슬라이더는 원하는 시간에서의 상태를 볼 수 있게 해줍니다.
+}
+
+
+
+%[volcano]
+\page{\font{dotum}{42} 화산활동}{
+\font{dotum}{34}
+화산은 마그마 등의 물질이 행성 표면을 뚫고 나와 분출하여 만들어진 지형입니다. 지구 이외의 태양계 행성과 위성에서도 여러 화산이 발견됩니다. \par
+화산은 일반적으로 판의 경계부분에서 볼 수 있습니다. 두 판이 갈라지는 곳에서는 활발한 화산활동이 일어나는데, 해저의 중앙해령과 그 연장선 상의 아이슬란드가 좋은 예가 됩니다. 대륙지각에서는 동아프리카 지구대, 리오그란데 열곡, 아이펠 화산 등을 예로 들 수 있습니다. 판이 수렴하는 곳에서도 화산활동이 빈번하게 일어나며, 쿠릴 열도에서 일본 열도와 마리아나 제도를 거쳐 뉴질랜드에 이르는 서태평양의 \nobreak{환태평양 지진대} 등이 대표적인 예입니다. 화산이 형성되는 또 다른 원인은 맨틀플룸인데, 이에 의하여 생기는 화산들을 열점이라고 부르며 하와이가 대표적인 예입니다. 열점은 태양계의 다른 많은 행성들에서도 볼 수 있습니다. \par
+화산폭발은 주변뿐만 아니라 다른 곳에도 많은 위험을 초래합니다. 특히 대기로 분출된 화산재는 제트엔진을 사용하는 비행기에 치명적입니다. 또한 폭발로 인해 발생한 화산재와 유황산 물질이 태양을 가려 지표면 그리고 대류권의 온도를 떨어뜨립니다. 한편 지표면으로부터 흡수한 열을 복사시켜 성층권의 온도를 높입니다. 그래서 역사적으로도 소위 말하는 화산겨울은 대기근의 원인이 되었습니다. \par
+
+유럽의 화산 현황은 \link{volcanolist}{이곳} 에서 볼 수 있습니다. \par
+
+\cite{ko.wikipedia.org \font{dotum}{32} 에서 인용}
+}
+
+
+%[volcanolist]
+\page{\font{dotum}{42} 유럽의 화산}{
+\font{dotum}{34}
+\vskip{1.2}
+유럽의 대표적인 화산들: \\
+\item{ Etna (between 3370-3400 m), Sicily, 이탈리아 }
+\item{ Beerenberg (2277 m), Jan Mayen, 노르웨이 }
+\item{ \link{volcano2011}{\font{DejaVuSans}{32} Grímsvötn } (1725 m, under the Vatnajökull), 아이슬란드 }
+\item{ \link{volcano2010}{\font{DejaVuSans}{32} Eyjafjallajökull} (1666 m), 아이슬란드 }
+\item{ Herðubreið (1682 m), 아이슬란드 }
+\item{ Hekla (1491 m), 아이슬란드 }
+\item{ Vesuv (about 1200 m), 이탈리아 }
+\item{ Cabeço Gordo (1043 m), Azoren, 포르투갈 }
+\item{ Stromboli (about 926 m), 이탈리아 }
+\item{ Santorin (Σαντορίνη) (575 m), 그 }
+
+\cite{wikipedia.org 에서 인용}
+}
+
+
+%[volcano2010]
+\page{Eyjafjallajökull}{
+\font{dotum}{34}
+ 화산 \font{DejaVuSans}{32} Eyjafjallajökull \font{dotum}{34}
+ 는 아일랜드 남쪽에 있는 같은 이름인 
+ \font{DejaVuSans}{32} Eyjafjallajökull \font{dotum}{34}
+ 라는 빙하의 아래에 있습니다.\par
+
+  2010 년 3 월 20 일에 1 차 폭발이 있었지만 그 피해는 매우 국소적이었습니다. 4월14일, 2차 폭발이 시작되었고 화산재는 수 km 까지 퍼져나갔습니다.
+  5월에서야 화산활동이 가라앉기 시작했고 10월 공식적으로 종식이 선포되었습니다. \par
+  폭발은 화산재 기둥을 제트기류까지 보냈고 기류를 따라 북유럽 전체로 확산되었습니다.
+  대기 내 허용가능 먼지 농도에 대한 지침서가 없었기 때문에 4월 15일부터 21일까지 유럽 전체에서 95,000여 항공편이 결항 되는 등 대혼란에 빠졌습니다.
+  다시 5월 4일과 5일에 아일랜드, 북아일랜드 그리고 스코틀랜드, 9일에는 스페인, 포르투갈, 오스트리아 그리고 이탈리아와 독일의 일부분,
+  다시 16일에 아일랜드와 스코틀랜드를 지나는 항공로가 폐쇄되었습니다. 
+\par
+
+ 결항에 대한 대응으로 대기 내 허용 먼지 농도에 대한 새로운 지침서가 채택되었습니다.
+ 결항으로 인한 항공사들의 경제적 손실은 약 13억 유로였습니다. 운송과 공급의 문제로 인해 다른 산업도 큰 타격을 입었습니다.
+
+  \cite{wikipedia.org 에서 인용}
+}
+
+
+%[volcano2011]
+\page{Grímsvötn}{
+\font{dotum}{32}
+  화산 \font{DejaVuSans}{30} Grímsvötn \font{dotum}{32} 는 아일랜드의 산악지대에 있는 \font{DejaVuSans}{30} Vatnajökull \font{dotum}{32} 라는 빙하 아래에 위치해 있습니다. \par
+  
+2011년 5월 21일 화산폭발이 시작되었고 그날 밤 빙하가 무너져 내렸습니다. 화산재 기둥은 20km 상공까지 치솟았고 평균 10km 상공에서 머물렀습니다. 5월 24일 화산활동이 약해지기 시작하였고 25일에 멈췄습니다..\par
+
+화산활동이 있었던 22일부터 25일까지 화산재 구름으로 인해 유럽의 많은 국가에서 900여 편의 항공편이 결항됐습니다. 5월 22일 아이슬란드는 주 공항을 폐쇄하였고 23일 덴마크의 일부 공항이 폐쇄되었습니다. 24일에는 스코틀랜드와 북아일랜드 그리고 잉글랜드 북부, 25일에는 독일 북부의 공항이 폐쇄되었습니다.\par
+
+\font{DejaVuSans}{30}Grímsvötn \font{dotum}{32} 의 폭발의 여파는 전년도의 
+\font{DejaVuSans}{30}Eyjafjallajökull \font{dotum}{32}
+화산의 폭발의 여파보다 적었지만 사실 폭발로 인해 발생한 화산재의 양은 훨씬 많았습니다. 유사시 항공기 운항에 대한 지침과 덜 치명적인 화산재 그리고 바람의 방향이 피해를 줄이는데 큰 역할을 하였습니다..\\
+
+  \cite{Wikipedia.org 에서 부분 인용}
+}
+
+
+%[equation]
+\page{\font{dotum}{42}수학적 모델}{
+\font{dotum}{32}
+  대기에서 화산재 확산은 다음과 같은 편미분 방정식에 의해 기술됩니다:\\
+  \hfill\image{4}{0.5}{../../images/equation.png}\hfill\par
+
+  \hfill\parbox{11}{
+    \desc{농도 \math{c(x,t)}}{
+      다음의 미지 함수 \math{c(x,t)} 는 위치 x와 시간 t에서의 농도를 나타냅니다. 초기 농도는 0입니다.
+    }
+    \desc{바람의 벡터장 \math{w(x)}}{
+      벡터장 \math{w(x)} 은 위치 x에서 바람의 속도와 방향을 나타냅니다.
+    }
+    \desc{확산계수 \math{\eps}}{
+      상수 \math{\eps} 는 확산의 속도를 나타냅니다. 여기서는 화산재 입자의 random movement 정도가 되겠지요.
+      이는 난류 안에서 미시적 운동을 기술하는 간단한 모델로 이용됩니다. 
+    }
+    \desc{Source Term \math{v(x,t)}}{
+      Source term \math{v(x,t)} 은 위치 x 와 시간 t 에서 대기상에 분출된 화산재의 양을 나타냅니다.
+      이는 화산의 분출을 표현하며 화산에서 가까운 곳에서만 0이 아닙니다. 
+    }
+  }\hfill\\
+}
+
+
+%[numerics]
+\page{\font{dotum}{42}이산화}{
+
+  \input{discretization.kor}
+  \link{numericsold}{\font{dotum}{32}더 배워보기}
+}
+
+
+%[numericsold]
+\page{\font{dotum}{42}이산화}{
+\font{dotum}{32}
+  이 시뮬레이션은 \emph{직선군법} 이라 하는 공간과 시간에 대한 이산화를 이용합니다.\par
+
+  \section{공간 이산화}
+  공간 이산화에 대해서는 \emph{불연속 Galerkin 방법(DG)} 이 이용되었습니다. 이 방법은 정의역의 사각형 분할에 기초합니다. 이 문제에 대해서는 유럽지도를 쪼개겠죠.
+  각각의 사각 위에서의 해는 이중선형(bilinear) 함수에 의해 근사됩니다. DG 는 이런 이중선형함수를 어떻게 찾는지 알려줍니다.\par
+
+  \section{시간 이산화}
+  먼저 관측 시간구간(0h - 100h) 이 유한한 시간으로 분할됩니다. 그리고 나서 \emph{Runge-Kutta 방법}
+  에 의해 이전 시간단계에서 다음 단계로 갈 때 화산재의 농도가 어떻게 변화하는지 계산됩니다.
+  \par
+
+  \par
+  \link{software}{\dunefem} 라는 프로그램이 수치적 시뮬레이션을 계산하기 위해 이용되었습니다.
+  \par 
+  \hfill\link{software}{\image{6}{0}{../../images/logo_dune-fem.png}}\hfill \\
+}
+
+
+%[software]
+\page{Dune-Fem}{
+  \font{dotum}{30}
+  \dunefem 은 이산화 프로그램으로써 다음을 의미합니다. \glue{\emph{D}istributed} and
+  \glue{\emph{U}nified} \glue{\emph{N}umerics} \glue{\emph{E}nvironment}
+  \glue{(\dune).}
+  프로그램은 이산함수 공간이나 함수뿐만 아니라 선형, 비선형, 역연산자에 대한 인터페이스를 제공합니다. 특히 성능, 활용도 그리고 평행 계산에 초점이 맞춰졌습니다. \dunefem 는 Freiburg, Münster, Stuttgart 과 Warwick 에 있는 여러 대학에 의해 공동 개발 되었습니다..
+  \hfill\mbox{\font{DejaVuSansMono}{24}http://dune.mathematik.uni-freiburg.de/}\par
+
+  \par
+  일반적인 \dune 은 격자나 solver 같은 개념에 대한 매우 간단한 인터페이스를 제공합니다. 현대의 C++ 프로그래밍으로는 매우 조금 얻거나 혹은 거의 얻을 수 없습니다.   
+  \dune 은 Aachen, Berlin, Freiburg, Heidelberg, Münster, Stuttgart, 그리고 Warwick 에 있는 여러 대학에 의해 개발되었습니다..
+  \hfill\mbox{\font{DejaVuSansMono}{24}http://www.dune-project.org/}\par
+
+  \par
+  평행한 격자점은 University of Freiburg 에서 개발된 \dunespgrid 라는 모듈에 의해 제공됩니다. 
+  \hfill\mbox{\font{DejaVuSansMono}{24}http://dune.mathematik.uni-freiburg.de/grids/dune-spgrid/}\par
+}
+
+
+%[impressum]
+\page{\font{dotum}{42}제작자}{
+\par\section{\font{dotum}{38}조직}\par
+Prof. Dr. D. Kröner, Dr. M. Nolte (AAM, University of Freiburg)\\
+T.Malkmus, Th. Strauch (University of Freiburg)\\
+\par
+\par\section{\font{dotum}{38}프로그래밍}\par
+Dr. M. Nolte (AAM, University of Freiburg)\\
+Dr. R. Klöfkorn (IMAGe / NCAR)\\
+D. Nies, J. Gerstenberger, T. Malkmus und A. Pfeiffer (University of Freiburg)\\
+\par
+\par\section{Pictures}\par
+Map by San Jose, Wikimedia Commons (licensed under CC-BY-SA 3.0)\\
+Volcano picture by H. Thorburn, Wikimedia Commons (licensed under CC-BY 3.0)\\
+Icons by J. Gerstenberger and E. Thum (University of Freiburg)\\
+
+
+\absolute{lb}{0.25}{6.6}{\font{DejaVuSans}{22}\it CC-BY 3.0: Creative-Commons Attribution license version 3.0, http://www.creativecommons.org/licenses/by/3.0/ }
+\absolute{lb}{0.25}{6.8}{\font{DejaVuSans}{22}\it CC-BY-SA 3.0: Creative-Commons ShareAlike license version 3.0, http://www.creativecommons.org/licenses/by-sa/3.0/ }
+}
+
+

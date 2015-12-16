@@ -1,0 +1,115 @@
+\input{panelmacros}
+
+\def{equation}{
+  \absolute{0.25}{#1}{
+    \parbox{6.5}{
+      \font{dotum}{34}
+      \color{text.default}
+      \hfill 다음은 화산재의 확산을 모델링하는 식입니다  \hfill \\
+      \par
+      \hfill \image{5}{0}{../../images/#0.png} \hfill \\
+    }
+  }
+}
+
+%[main]
+\page{
+  \font{dotum}{36}
+  이 프로그램은 \link{volcano}{화산폭발} \link{volcano}{후에} \link{volcano}{화산재가} \link{volcano}{유럽에서} 어떻게 확산되는지
+   근사적으로 보여줍니다. 터치스크린을 이용해 초기값들을 입력하면 결과물이 바로 계산되어 나옵니다.
+   \par
+  \link{numerics}{수치 시뮬레이션} 은 일기예보 혹은 대기상의 오염물의 확산 등 지구물리학의 응용에 널리 사용됩니다. 이러한
+  현상들을 표현하는 \link{equation}{수학적 모델} 은 주로 편미분방정식(PDE) 에 의해 기술됩니다. 하지만 이러한 PDE 의 해를 찾는
+  것은 보통 매우 어렵습니다. 
+}
+\hint{link:manual}{\font{dotum}{34} 프로그램 사용법 배워보기}{7.66}
+
+%[volcano]
+\page{
+  \font{dotum}{36}
+  \item{화산의 위치를 선택하세요.\\
+    \hfill \\ 
+    \it \leading{0.0} 화면을 눌러서 원하는 위치에 화산을 놓으십시오. }
+  \color{dune.gray}
+  \item{ 바람의 벡터장을 그리세요.}
+  \item{ 확산계수를 선택하세요. \glue{\math{\eps}.}}
+  \item{ 시뮬레이션의 결과를 관찰해 보세요.}
+}
+\equation{equation_volcano}{5}
+\hint{link:volcano}{\font{dotum}{34} 화산에 대해 더 배워보기 }{7.66}
+
+%[input]
+\page{
+  \font{dotum}{36}
+  \color{dune.gray}
+  \item{ 화산의 위치를 선택하세요. }
+
+  \color{black}
+  \item{ 바람의 벡터장을 그리세요. \\
+    \hfill \\ \it \leading{0.0}
+ 손가락을 빠르게 움직일수록 바람은 더 세집니다.
+  }
+
+  \color{dune.gray}
+  \item{ 확산계수를 선택하세요. \glue{\math{\eps}.}}
+  \item{ 시뮬레이션의 결과를 관찰해 보세요.}
+}
+\equation{equation_windfield}{5}
+\hint{link:equation}{\font{dotum}{34} 수학적 모델에 대해 더 배워보기. }{7.66}
+
+%[diffusion]
+\page{
+  \font{dotum}{36}
+  \color{dune.gray}
+  \item{ 화산의 위치를 선택하세요.}
+  \item{ 바람의 벡터장을 그리세요.}
+
+  \color{black}
+  \item{ 확산계수를 선택하세요. \glue{\math{\eps}.}\\
+    \hfill \\ \it \leading{0.0}
+    확산계수가 클수록 화산재는 더 빨리 퍼집니다.
+  }
+
+  \color{dune.gray}
+  \item{ 시뮬레이션의 결과를 관찰해 보세요.}
+}
+\equation{equation_diffusion}{5}
+\hint{link:equation}{\font{dotum}{34} 수학적 모델에 대해 더 배워보기 }{6.66}
+
+%[visual]
+\page{
+  \font{dotum}{36}
+  \color{dune.gray}
+  \item{ 화산의 위치를 선택하세요. }
+  \item{ 바람의 벡터장을 그리세요. }
+  \item{ 확산계수를 선택하세요.\glue{\math{\eps}.}}
+
+  \color{black}
+  \item{ 시뮬레이션의 결과를 관찰해 보세요. \\
+    \hfill \\ \it \leading{0.0}
+    계산된 결과가 지도에 나타납니다.
+  }
+}
+\equation{equation}{5}
+\hint{link:numerics}{\font{dotum}{34} 이산화 (Discretization) 에 대해 더 배워보기}{7.0}
+
+%[computing]
+\font{dotum}{42}
+\hfill 바람의 벡터장 계산중...\hfill\\
+
+%[coefficient]
+\font{dotum}{32}
+\hfill\\\hfill 확산계수:\hfill\\
+
+%[low]
+\font{dotum}{32}
+낮음 \hfill
+
+%[high]
+\font{dotum}{32}
+\hfill 높음
+
+%[language]
+\font{dotum}{42}
+\hfill 언어를 선택하세요\hfill\\
+

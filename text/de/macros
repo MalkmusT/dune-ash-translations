@@ -1,0 +1,57 @@
+\leading{0.2}
+\def{itemcnt}{0}
+
+\def{par}{\leading{0.6}\newline\leading{0.2}}
+\def{vskip}{\hfill\leading{#0}\newline\leading{0.2}}
+
+\def{emph}{\mbox{\bf #0}}
+\def{math}{\glue{\it #0}}
+
+\def{page}{\absolute{0.25}{0.25}{\parbox{11.5}{\head{#0}#1}}}
+\def{head}{\mbox{\font{DejaVuSans}{42}\bf\color{text.heading} #0}\par}
+\def{section}{\mbox{\font{DejaVuSans}{32}\bf\color{text.heading} #0}\par}
+\def{subsection}{\mbox{\font{DejaVuSans}{28}\bf\color{text.default} #0}\par}
+
+\def{desc}{
+  \emph{#0}\\
+  \hfill \parbox{10}{#1}\\
+}
+
+\def{item}{
+  \advance{itemcnt}
+  \parbox{0.4}{
+    \glue{ \hfill \itemcnt. }
+  }
+  \hfill \parbox{10}{#0} \hfill \\
+}
+
+\def{stepcount}{0}
+\def{stepitem}{
+  \advance{stepcount}
+  \parbox{#0}{#2 \glue{\stepcount:}}
+  \parbox{#1}{#3}\\
+}
+
+\def{defitem}{
+  \hfill \parbox{2.5}{\bf #0 \hfill}
+  \hfill \parbox{8}{#1} \hfill \\
+}
+
+\def{imgitem}{
+  \parbox{0.75}{\leading{0.2}\newline\image{0.75}{0}{../images/#0}}
+  \hfill
+  \parbox{#1}{\leading{0.0}\newline\leading{0.2} #2}
+}
+
+\def{link}{\button{link:#0}{\color{text.link} #1}}
+\def{todo}{\mbox{\color{red}TODO: #0}}
+
+\def{dune}{\mbox{\font{DejaVuSans}{28}\bf\color{dune.orange} Dune}}
+\def{dunefem}{\mbox{\font{DejaVuSans}{28}\bf\color{dune.orange} Dune-Fem}}
+\def{dunespgrid}{\mbox{\font{DejaVuSans}{28}\bf\color{dune.orange} Dune-SPGrid}}
+\def{eps}{ε}
+
+\def{cite}{\absolute{rb}{11.75}{6.8}{\font{DejaVuSans}{22} \it #0} }
+
+\def{nobreak}{\mbox{#0}}
+

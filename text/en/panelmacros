@@ -1,0 +1,48 @@
+\leading{0.2}
+\font{DejaVuSerif}{36}
+\def{itemcnt}{0}
+
+\def{par}{\leading{0.6}\newline\leading{0.2}}
+\def{vskip}{\hfill\leading{#0}\newline\leading{0.2}}
+
+\def{emph}{\mbox{\bf #0}}
+\def{math}{\glue{\it #0}}
+
+\def{page}{\par\par\hfill\parbox{6.5}{#0}\hfill}
+\def{head}{\mbox{\font{DejaVuSans}{42}\bf\color{text.heading} #0}\\ \par}
+
+\def{event}{\button{event:#0}{\color{text.link} #1}}
+\def{link}{\button{link:#0}{\color{text.link} #1}}
+
+\def{item}{
+  \advance{itemcnt}
+  \parbox{.4}{
+    \glue{ \hfill \itemcnt. }
+  }
+  \hfill \parbox{5.5}{#0} \hfill \par
+}
+
+\def{actions}{
+  \absolute{1.0}{#0}{
+    \parbox{5.0}{
+      \font{DejaVuSans}{32}
+      \color{text.default}
+      #1
+    }
+  }
+}
+
+\def{hint}{
+  \absolute{rb}{6.7}{#2}{
+    \parbox{6.5}{
+      \hfill
+      \font{DejaVuSans}{30}
+      \color{text.link}
+      \button{#0}{#1}
+    }
+  }
+}
+
+\def{todo}{\mbox{\color{red}TODO: #0}}
+
+\def{eps}{ε}

@@ -1,0 +1,294 @@
+\input{macros}
+
+%[maininfo]
+\page{Überblick}{
+  Dieses Programm ist eine numerische Simulation der Ausbreitung einer durch
+  einen Vulkanausbruch entstandenen Aschewolke in einer konstanten Höhe bezüglich eines 
+  gegebenen Windfeldes. Das Projekt wurde durch die Ausbrüche der isländischen Vulkane
+  \link{volcano2010}{Eyjafjallajökull} in 2010 und \link{volcano2011}{Grímsvötn}
+  in 2011 motiviert.\\ \par
+  Mit diesem Programm kann ein solches Event interaktiv in Zentraleuropa simuliert werden.
+  Das Programm führt einen Schritt für Schritt durch die Konfiguration, wie die Position 
+  des Vulkans, den Wind und die Diffusion und visualisiert die Ergebnisse. Sobald Resultate berechnet wurden, werden diese
+  auf der Karte wiedergegeben. Auf der Karte können zusätzlich der Wind und das zugrundeliegende
+  Gitter in verschiedenen Feinheitsgraden angezeigt werden.
+
+  \par
+  \link{manual}{Wie funktioniert dieses Programm?} \par
+  \link{volcano}{Mehr über Vulkane }\par
+  \link{equation}{Mehr über das mathematische Modell für den Asche Transport}\par
+  \link{numerics}{Mehr über die numerischen Verfahren dieser Simulation}\par
+
+  \cite{\link{impressum}{ Credits } }
+}
+
+
+
+
+%[manual]
+\page{Programm Benutzung}{
+  Dieses Programm ist in die vier folgenden Teile aufgespalten:\par
+
+  \stepitem{1.5}{9.5}{Schritt}{ Platziere den Vulkan.\\ Berühre den Bildschirm an der gewünschten Position des Vulkans. }
+  \stepitem{1.5}{9.5}{Schritt}{ Skizziere ein Windfeld.\\ Zeichne eine Linie auf der Karte um die Windrichtung und -geschwindigkeit vorzugeben. }
+  \stepitem{1.5}{9.5}{Schritt}{ Wähle die Diffusionskonstante \math{\eps}.\\ Je höher die Diffusionskonstante gewählt wird, desto schneller verteilt sich die Asche. }
+  \stepitem{1.5}{9.5}{Schritt}{ \link{visualizationmode}{ Anzeigen der Simulationsergebnisse. }\\ 
+  Betrachten sie die Animation der im Hintergrund berechneten numerischen Lösung.}
+
+  \par\subsection{Allgemeine Bedienung:}
+  \parbox{3.5}{
+    \imgitem{arrow_leftmost.wbtn.png}{2.5}{Neustart}
+  }
+  \hfill
+  \parbox{3.5}{
+    \imgitem{arrow_left.wbtn.png}{2.5}{Vorheriger Schritt\\(falls möglich)}
+  }
+  \hfill
+  \parbox{3.5}{
+    \imgitem{arrow_right.wbtn.png}{2.5}{Nächster Schritt\\(falls möglich)}
+  }
+}
+
+
+%[visualizationmode]
+\page{Anzeigen der Simulationsergebnisse}{
+Die numerische Lösung wir kontinuierlich berechnet.
+Sie können durch die Animation mit den Knöpfen 'stop' und 'play/pause' sowie dem Schiebregler navigieren. \par
+
+Bitte beachten sie, dass die vollständige Berechnung der Daten einen kurzen Augenblick dauern kann.
+Besonders bei einer hohen Diffusionskonstante kann die Berechnung der Ergebnisse einen Moment dauern.
+
+  \par\subsection{Knöpfe:}
+  \parbox{5.5}{
+    \imgitem{arrows.wbtn.png}{4.5}{Wechselt die Anzeigefeinheit des Windfeldes}
+    \imgitem{grid.wbtn.png}{4.5}{Wechselt die Anzeigefeinheit des Rechengitters, siehe auch: 
+    \link{numerics}{Mehr} \link{numerics}{über} \link{numerics}{das} \link{numerics}{numerischen} \link{numerics}{Verfahren} }
+  }
+  \hfill
+  \parbox{5.5}{
+    \imgitem{play.wbtn.png}{4.5}{Abspielen der Simulationsergebnisse (pausieren während des Abspielens)}
+    \imgitem{stop.wbtn.png}{4.5}{Stoppt das abspielen der Simulation und setzt den Abspielpunkt auf Null} 
+    \imgitem{repeat.wbtn.png}{4.5}{Spielt die Simulationsergebnisse in einer Endlosschleife ab}
+  }
+
+  \par\subsection{Schieberegler:}
+  Mit dem Schieberegler kann man den aktuellen Abspielpunkt der Animation verändern.
+}
+
+
+%[volcano2010]
+\page{Eyjafjallajökull}{
+  Der Vulkan Eyjafjallajökull liegt in Südisland unter dem gleichnamigen Gletscher.\par
+
+  Die erste Phase des Ausbruchs im Jahre 2010 begann am 20. März und hatte nur
+  lokale Auswirkungen.
+  Am 14. April trat die Eruption in eine zweite, explosive Phase ein und
+  Vulkanasche wurde mehrere Kilometer in die Höhe geschleudert.
+  Im Mai begann die vulkanische Aktivität nachzulassen und wurde im Oktober
+  für beendet erklärt.\par
+
+  Durch den Ausbruch wurde Vulkanasche direkt in den Jetstream geschleudert und
+  in den folgenden Tagen über Nordeuropa transportiert.
+  Mangels Richtlinien für eine tolerierbare Aschekonzentration in der Luft wurde
+  der Luftraum über weiten Teilen Europas vom 15. bis 21. April geschlossen.
+  Mehr als 95.000 Flüge fielen aus.
+  Am 4. und 5. Mai wurde der Luftraum über Irland, Nordirland und Schottland
+  erneut geschlossen, am 9. Mai über Spanien, Portugal, Österreich, sowie
+  Teilen Italiens und Deutschlands und am 16. Mai erneut über Irland und
+  Großbritanniens.\par
+
+  Als Reaktion auf die Flugausfälle wurden neue Sicherheitsbestimmungen
+  bezüglich einer tolerablen Aschekonzentration erlassen.
+  Der finanzielle Schaden der Fluggesellschaften wurde auf ca. 1,3
+  Milliarden Euro geschätzt.
+  Durch Transport- und Lieferverzögerungen waren auch andere
+  Industriezweige betroffen.
+
+  \cite{Inhalte teilweise Wikipedia.org entnommen}
+}
+
+
+%[volcano2011]
+\page{Grímsvötn}{
+  Der Vulkan Grímsvötn liegt unter dem Gletscher Vatnajökull in den Bergen Islands.\par
+  
+  Am 21. Mai 2011 begann der Vulkan auszubrechen und am Abend brach die Eisdecke des
+  Gletschers.
+  Vulkanasche wurde 20 km in die Höhe geschleudert, fiel danach jedoch auf eine
+  durchschnittliche Höhe von 10 km.
+  Am 24. Mai wurde die Eruption schwächer und endete schließlich am 25. Mai.\par
+
+  In der Zeit vom 22. bis 25. Mai behinderte die Aschewolke den Luftverkehr in
+  mehreren europäischen Ländern und 900 Flüge fielen aus.
+  Am 22. Mai schloss Island seinen Hauptflughafen und am 23. Mai wurden Teile des
+  dänischen Luftraums geschlossen.
+  Am 24. Mai wurden Flughäfen in Schottland, Nordirland und Nordengland
+  geschlossen und am 25. Mai wurden einige Flughäfen in Norddeutschland bis zum
+  Nachmittag geschlossen.\par
+
+  Obwohl die Folgen des Ausbruchs signifikant schwächer waren als die des
+  Ausbruchs des Eyjafjallajökull im Vorjahr, war das Gesamtvolumen der
+  produzierten Asche deutlich höher.
+  Neue Sicherheitsrichtlinien für den Luftverkehr, die als Reaktion auf den
+  Ausbruch im Vorjahr erlassen worden waren, weniger aggressive Asche
+  Charakteristika, sowie günstigere Windverhältnisse halfen den Schaden
+  erheblich abzuschwächen.\\
+
+  \cite{Inhalte teilweise Wikipedia.org entnommen}
+}
+
+
+%[volcano]
+\page{Vulkanische Aktivität}{
+\font{DejaVuSerif}{24}
+Ein Vulkan ist eine Öffnung oder Spalte in der Oberfläche eines Planeten, 
+durch die heißes Magma, vulkanische Asche oder Gase aus einer unterirdischen Magmakammer 
+entweichen können.
+Gewöhnlich findet man Vulkane an Stellen an denen sich 
+tektonische Platten aufeinander zu oder voneinander weg bewegen.\par
+
+Entlang des Mittelatlantischen Rückens befinden sich viele Vulkane, die durch das Auseinanderdriften tektonischer Platten 
+entstanden sind. Am 'Pazifischen Feuerring' hingegen findet man Vulkane die durch das Aufeinanderdriften tektonische Platten entstanden sind.
+Im Gegensatz dazu findet man selten Vulkane, wenn tektonische Platten aneinander entlang driften.
+Vulkane können auch innerhalb tektonischer Platten entstehen, an Stellen an denen die Erdkruste sehr dünn ist, wie 
+zum Beispiel im Ostafrikanischen Graben oder dem Rio-Grande-Riff in Nord Amerika. \par
+Vulkanische Aktivitäten, weit von Plattengrenzen entfernt, werden durch die Mantel-Plume erklärt.
+Es wird vermutet, dass diese sogenannten "Hotspots", wie zum Beispiel Hawaii,  
+durch aufsteigendes Magma vom Rand des Erdkerns, aus einer Tiefe von ca. 3.000 km, entstehen. \par
+
+Nicht nur die unmittelbare Umgebung wird durch einen ausbrechenden Vulkans bedroht.
+Vulkanasche gefährdet auch die Luftfahrt, besonders düsengetriebene Flugzeuge, deren hohe Betriebstemperatur 
+Aschepartikel schmelzen können. 
+Große Ausbrüche beeinflussen die Temperatur auf der Erde indem 
+Asche und Schwefelsäuretröpfchen die Sonne verdecken und dadurch die untere Atmosphäre abkühlen.
+Andererseits wird auch abgestrahlte Wärme absorbiert und dadurch die Stratosphäre erwärmt.
+Sogenannte 'vulkanische Winter' haben in der Geschichte katastrophale Hungersnöte hervorgerufen. \par
+\link{volcanolist}{Wollen sie eine Liste mit Vulkanen in Europa?} \par
+
+\cite{Inhalt teilweise Wikipedia.org entnommen}
+}
+
+%[volcanolist]
+\page{Vulkane in Europa}{
+Die größten Vulkane Europas sind:\\
+\item{ Etna (3370-3400 m), Sizilien, Italien }
+\item{ Ponta do Pico (2351 m), Azoren, Portugal }
+\item{ Beerenberg (2277 m), Jan Mayen, Norwegen }
+\item{ \link{volcano2011}{Grímsvötn} (1725 m), unter dem Gletscher Vatnajökull, Island }
+\item{ \link{volcano2010}{Eyjafjallajökull} (1666 m), Island }
+\item{ Herðubreið (1682 m), Island }
+\item{ Hekla (1491 m), Island }
+\item{ Vesuv (um 1200 m), Italien }
+\item{ Cabeço Gordo (1043 m), Azoren, Portugal }
+\item{ Santorin (Σαντορίνη) (575 m), Griechenland }
+
+\cite{Inhalt teilweise Wikipedia.org entnommen}
+}
+
+
+%[equation]
+\page{Mathematisches Modell}{
+  Die folgende partielle Differentialgleichung ist ein einfaches mathematisches
+  Modell für die Ausbreitung der Aschepartikel in der Atmosphäre:\\
+  \hfill\image{4}{0.5}{../../images/equation.png}\hfill\par
+
+  \hfill\parbox{11}{
+    \desc{Konzentration \math{c(x,t)}}{
+      Die unbekannte Funktion \math{c(x,t)} beschreibt die Konzentration der
+      Asche in einem Punkt x zur Zeit t.
+      Die Anfangskonzentration ist Null.
+    }
+    \desc{Windfeld \math{w(x)}}{
+      Das Vektorfeld \math{w(x)} beschreibt Richtung und Geschwindigkeit des
+      Windes in einem Punkt x.
+    }
+    \desc{Diffusionskoeffizient \math{\eps}}{
+      Die Konstante \math{\eps} ist die Stärke der Diffusion, d.h. der zufälligen
+      Bewegung von Aschepartikeln.
+      Hier ist sie ein sehr einfaches Modell für die mikroskopische Bewegung
+      in einer turbulenten Strömung.
+    }
+    \desc{Quellterm \math{v(x,t)}}{
+      Der Quellterm \math{v(x,t)} beschreibt die Injektion von Asche in die
+      Atmosphäre im Punkt x zur Zeit t.
+      Sie modelliert den Vulkanausbruch und verschwindet außerhalb einer
+      kleinen Umgebung des Vulkans.
+    }
+  }\hfill\\
+}
+
+
+
+%[numerics]
+\page{Diskretisierung}{
+\input{discretization.de}
+\link{numericsold}{Erfahren sie mehr...}
+}
+
+%[numericsold]
+\page{Diskretisierung}{
+In dieser Simulation wurde eine Trennung zwischen Raum- und Zeitdiskretisierung angewendet.
+Diese Technik ist in der Literatur bekannt unter dem Namen \emph{method of lines.}\par
+\section{ Raumdiskretisierung }
+  Für die Raumdiskretisierung wird ein \emph{Discontinuous Galerkin} (DG) Verfahren auf einem strukturierten Gitter verwendet.
+  Diese Methode basiert auf der Zerlegung des Rechengebietes, hier die Karten von Europa, in 'kleine' Vierecke.
+  Auf jedem dieser Vierecke wird die Lösung des mathematischen Problems durch eine bilineare Funktion angenähert.\\
+  Das DG Verfahren liefert nun eine Regel wie diese bilinearen Funktionen zu berechnen sind. \par
+
+  \section{Zeitdiskretisierung }
+  Das zu betrachtende Zeit Intervall (0h - 100h) wird in endlich viele Zeitschritte zerlegt.
+  Ein \emph{Runge-Kutta} Verfahren wird verwendet um die Evolution von einem Zeitschritt zum nächsten zu bestimmen.\par
+
+  Das Software Paket \dunefem wird für die numerische Simulation verwendet.
+ \par 
+  \hfill\link{software}{\image{6}{0}{../../images/logo_dune-fem.png}}\hfill \\
+}
+
+%[software]
+\page{Dune-Fem}{
+  \font{DejaVuSerif}{30}
+  Das Software Paket \dunefem ist ein Diskretisierungs-Modul der Software Bibliothek \glue{\dune,}
+  \glue{\emph{D}istributed } \glue{\emph{U}nified} \glue{\emph{N}umerics} \glue{\emph{E}nvironment.}
+  
+  Es stellt Schnittstellen für diskrete Funktionenräume und Funktionen so wie 
+  lineare und nicht-lineare Löser zur Verfügung.
+  Besondere Aufmerksamkeit wurde auf die Parallelisierung, Adaptivität und Effizient gelegt.
+  \dunefem wurde an den Universitäten Freiburg, Münster, Stuttgart und Warwick entwickelt.
+  \hfill\mbox{\font{DejaVuSansMono}{24}http://dune.mathematik.uni-freiburg.de/}\par
+
+  \par
+  Die Software Bibliothek \dune 
+  stellt 'schlanke' Schnittstellen für allgemeine Konzepte wie Gitter oder Löser zur Verfügung.
+  Moderne C++ Programmiertechniken wurden angewandt um einen möglichst kleinen Overhead zu erreichen.
+  \dune wurde an den Universitäten Aachen, Berlin, Freiburg, Heidelberg, Münster, Stuttgart und Warwick 
+  entwickelt.
+  \hfill\mbox{\font{DejaVuSansMono}{24}http://www.dune-project.org/}\par
+
+  \par
+  Die parallel kartesische Gitterimplementierung wird von dem Software Modul \dunespgrid
+  bereitgestellt, welches an der Universität Freiburg entwickelt wurde. \\
+  \hfill\mbox{\font{DejaVuSansMono}{24}http://dune.mathematik.uni-freiburg.de/grids/dune-spgrid/}\par
+}
+
+
+%[impressum]
+\page{Beteiligte}{
+\par\section{Organisation}\par
+Prof. Dr. D. Kröner, Dr. M. Nolte (AAM, Universität Freiburg)\\
+T. Malkmus, Th. Strauch (Universität Freiburg)\\
+\par
+
+\par\section{Programmierung}\par
+Dr. M. Nolte (AAM, Universität Freiburg)\\
+Dr. R. Klöfkorn (IMAGe, NCAR)\\
+D. Nies, J. Gerstenberger, T. Malkmus und A. Pfeiffer (Universität Freiburg)\\
+\par
+
+\par\section{Bilder}\par
+Karte von San Jose, Wikimedia Commons (lizensiert unter CC-BY-SA 3.0)\\
+Vulkanphotographie von H. Thorburn, Wikimedia Commons (lizensiert unter CC-BY 3.0)\\
+Icons von J. Gerstenberger und E. Thum (Universität Freiburg)\\
+
+\absolute{lb}{0.25}{6.6}{\font{DejaVuSans}{22}\it CC-BY 3.0: Creative-Commons Attribution license version 3.0, http://www.creativecommons.org/licenses/by/3.0/ }
+\absolute{lb}{0.25}{6.8}{\font{DejaVuSans}{22}\it CC-BY-SA 3.0: Creative-Commons ShareAlike license version 3.0, http://www.creativecommons.org/licenses/by-sa/3.0/ }
+}

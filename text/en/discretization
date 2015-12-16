@@ -1,0 +1,12 @@
+It is not possible to find an exact solution for partial differential equations in general.
+So instead of trying to find an explicit formula for the ash concentration, one tries to find an approximate solutions with the help of computer algorithms.\par
+The field of mathematics, that is concerned with developing effective algorithms to find such solutions and also to justify theoretically,
+that the solutions that are found by these algorithms approximate the mathematical problem correctly, is called numerical mathematics.\par
+The first step is to decompose the domain into finite many cells. Also the time intervall, for which a solution is to be found, is split into smaller intervalls.
+Then for each cell a finite set of so called ansatzfunctions is given.
+The main idea is to find for each point in time a combination of the ansatzfunctions, which is in some sense close to a function fulfilling the partial differential equation.
+\par
+
+
+
+

@@ -1,0 +1,9 @@
+Im Allgemeinen lassen sich für partielle Differentialgleichungen keine exakten Lösungen finden. Anstatt einer expliziten Formel für die Konzentration der Asche 
+zu suchen, benutzt man computergestützte Algorithmen zur Berechnung einer Näherungslösung.\par
+Die Teildisziplin der Mathematik, die sich damit beschäftigt effiziente Algorithmen dieser Art zu entwickeln und theoretisch zu rechtfertigen, dass die 
+berechneten Lösungen die tatsächliche Lösung des mathematischen Problems korrekt annähern, nennt sich Numerische Mathematik.\par
+Der erste Schritt im Fall des Aschetransports, besteht darin, das Gebiet in endliche viele Zellen zu unterteilen. Das Zeitintervall, für das eine Lösung
+gefunden werden soll, wird ebenfalls in Teilintervalle zerlegt. Weiterhin wird auf jeder Zelle eine Menge von sogenannten Ansatzfunktionen gegeben.
+Die eigentliche Idee besteht nun darin, für jeden Zeitpunkt eine Kombination der Ansatzfunktionen zu finden, die in einem gewissen Sinne nahe bei der Funktion
+liegt, welche die partielle Differentialgleichung exakt erfüllt.
+\par

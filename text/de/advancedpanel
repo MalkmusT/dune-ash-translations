@@ -1,0 +1,129 @@
+\input{panelmacros}
+
+\def{equation}{
+  \absolute{0.25}{#1}{
+    \parbox{6.5}{
+      \color{text.default}
+      \hfill Die zugrunde liegende Gleichung ist \hfill \\
+      \par
+      \hfill \image{5}{0}{../../images/#0.png} \hfill \\
+    }
+  }
+}
+
+%[main]
+\page{
+  \font{DejaVuSerif}{28}
+
+  Dieses Programm berechnet interaktiv eine Näherungslösung für die
+  Ausbreitung einer \link{volcano}{Aschewolke} \link{volcano}{nach einem}
+  \link{volcano}{Vulkanausbruch} über Europa. Eingabeparameter wie
+  die Luftströmung können direkt am Bildschirm eingegeben werden. Die Lösung
+  wird umgehend berechnet.
+
+  \par
+
+  \link{numerics}{Numerische Simulationen} werden häufig in
+  geophysikalischen Anwendungen wie der Wettervorhersage oder
+  bei der Vorhersage der Verteilung von Schadstoffen in der Luft
+  eingesetzt. \link{equation}{Mathematische Modelle,} die solche
+  Phänomene beschreiben, bestehen üblicherweise aus Partiellen
+  Differentialgleichungen (PDEs). Systeme von solchen PDEs zu lösen,
+  ist eine schwierige Aufgabe.
+}
+\hint{link:manual}{Wie funktioniert dieses Programm?}{7.66}
+
+%[volcano]
+\page{
+  \item{
+    Platziere den Vulkan.\\
+    \hfill \\
+    \it \leading{0.0} Berühre den Bildschirm an der \\ gewünschten Position des Vulkans.
+  }
+  \color{dune.gray}
+  \item{ Skizziere ein Windfeld. }
+  \item{ Wähle die Diffusionskonstante \glue{\math{\eps}.}}
+  \item{ Anzeige der Simulationsergebnisse. }
+}
+\equation{equation_volcano}{5}
+\hint{link:volcano}{Mehr über Vulkane}{7.66}
+
+%[input]
+\page{
+  \color{dune.gray}
+  \item{ Platziere den Vulkan. }
+
+  \color{black}
+  \item{ Skizziere ein Windfeld. \\
+    \hfill \\ \it \leading{0.0}
+    Je schneller gezeichnet wird,\\ desto schneller ist der Wind.
+  }
+
+  \color{dune.gray}
+  \item{ Wähle die Diffusionskonstante \glue{\math{\eps}.}}
+  \item{ Anzeige der Simulationsergebnisse. }
+}
+\equation{equation_windfield}{5}
+\hint{link:equation}{Mehr über die Gleichung}{7.66}
+
+%[diffusion]
+\page{
+  \color{dune.gray}
+  \item{ Platziere den Vulkan.}
+  \item{ Skizziere ein Windfeld. }
+
+  \color{black}
+  \item{ Wähle die Diffusionskonstante \glue{\math{\eps}.}\\
+    \hfill \\ \it \leading{0.0}
+    Je höher die Diffusion gewählt wird, desto schneller verteilt sich die Asche.
+  }
+
+  \color{dune.gray}
+  \item{ Anzeige der Simulationsergebnisse. }
+}
+\equation{equation_diffusion}{5}  
+\hint{link:equation}{Mehr über die Gleichung}{6.66}
+
+%[visual]
+\page{
+  \color{dune.gray}
+  \item{ Platziere den Vulkan. }
+  \item{ Skizziere ein Windfeld. }
+  \item{ Wähle die Diffusionskonstante \glue{\math{\eps}.}}
+
+  \color{black}
+  \item{ Anzeige der Simulationsergebnisse. \\
+    \hfill \\ \it \leading{0.0}
+    Die Ergebnisse werden berechnet und auf der Karte dargestellt.
+  }  
+
+  \par\color{black}
+  Aktivitäten:\\
+  ‣\event{screenshot}{Screenshot erstellen}
+}
+\equation{equation}{5}
+\hint{link:numerics}{Mehr über die Numerik}{7.0}
+
+%[computing]
+\font{DejaVuSerif}{42}
+\hfill Berechne Windfeld...\hfill\\
+
+%[coefficient]
+\hfill\\\hfill Diffusionskonstante:\hfill\\
+
+%[low]
+niedrig \hfill
+
+%[high]
+\hfill hoch
+
+
+%[language]
+\font{DejaVuSerif}{42}
+\hfill Wählen Sie eine Sprache aus.\hfill\\
+
+
+
+
+
+
